@@ -16,22 +16,24 @@ namespace LINQ
 
 
               var Filter = from item in featureCollection.features select item.properties.neighborhood;
-            int counter = 1;
+            int counter = 0;
             foreach (var item in Filter)
             {
-                Console.WriteLine($"{counter}. {item}");
                 counter++;
+
+                Console.WriteLine($"{counter}. {item}");
             }
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
 
             var FilterTwo = from item in featureCollection.features
                             where item.properties.neighborhood!= ""
                             select item.properties.neighborhood;
-            int counter2 = 1;
+            int counter2 = 0;
             foreach (var item in FilterTwo)
             {
+                   counter2++;
+
                 Console.WriteLine($"{counter2}. {item}");
-                counter2++;
             }
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
 
@@ -39,11 +41,11 @@ namespace LINQ
                             where item.properties.neighborhood != ""
                             select item.properties.neighborhood;
             var Doubly = FilterThree.Distinct();
-            int counter3 = 1;
+            int counter3 = 0;
             foreach (var item in Doubly)
             {
-                Console.WriteLine($"{counter3}. {item}");
                 counter3++;
+                Console.WriteLine($"{counter3}. {item}");
             }
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
 
@@ -51,20 +53,20 @@ namespace LINQ
                               where item.properties.neighborhood != ""
                               select item.properties.neighborhood).Distinct();
            
-            int counter4 = 1;
+            int counter4 = 0;
             foreach (var item in FilterFourth)
             {
-                Console.WriteLine($"{counter4}. {item}");
                 counter4++;
+                Console.WriteLine($"{counter4}. {item}");
             }
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++");
 
             var Filter5 = featureCollection.features.Select(x => x.properties.neighborhood);
-            int counter5 = 1;
+            int counter5 = 0;
             foreach (var item in Filter5)
             {
-                Console.WriteLine($"{counter5}. {item}");
                 counter5++;
+                Console.WriteLine($"{counter5}. {item}");
             }
             Console.WriteLine("+++++++++kjkjh+++++++++++++++++++++++++++++++++++++++++");
 
